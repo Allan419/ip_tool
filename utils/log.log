@@ -1,0 +1,20 @@
+2020-07-10 14:14:26 mongo_pool.py [line:24] INFO : 向proxies_pool.proxies插入新的代理 : 128.0.0.1:8900
+2020-07-10 14:14:38 mongo_pool.py [line:26] WARNING : 在proxies_pool.proxies已存在的代理 : 128.0.0.1:8900
+2020-07-10 14:15:39 mongo_pool.py [line:26] WARNING : 在数据库 proxies 已存在的代理 : 128.0.0.1:8900
+2020-07-10 14:17:01 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新的代理 : 128.0.0.1:8900
+2020-07-10 14:17:20 mongo_pool.py [line:26] WARNING : 在数据库 proxies_pool.proxies 已存在的代理 : 128.0.0.1:8900
+2020-07-10 14:17:56 mongo_pool.py [line:26] WARNING : 在数据库 proxies_pool.proxies 已存在代理 : 128.0.0.1:8900
+2020-07-10 14:20:11 mongo_pool.py [line:31] INFO : 在数据库 proxies_pool.proxies 更新代理 : 128.0.0.1:0008
+2020-07-10 14:23:03 mongo_pool.py [line:31] INFO : 在数据库 proxies_pool.proxies 更新代理 : 128.0.0.1:0008
+2020-07-10 14:23:14 mongo_pool.py [line:31] INFO : 在数据库 proxies_pool.proxies 更新代理 : 128.0.0.1:0008
+2020-07-10 14:34:12 mongo_pool.py [line:26] WARNING : 在数据库 proxies_pool.proxies 已存在代理 : 128.0.0.1:8900
+2020-07-10 14:34:28 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 128.0.0.2:8900
+2020-07-10 18:18:43 mongo_pool.py [line:25] WARNING : 在数据库 proxies_pool.proxies 已存在代理 : 128.0.0.2:8900
+2020-07-10 18:19:19 mongo_pool.py [line:23] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 122.0.1.2:8900
+2020-07-10 18:19:24 mongo_pool.py [line:23] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 4123.123.54.2:9000
+2020-07-10 18:19:28 mongo_pool.py [line:23] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 112.5.2.6:8900
+2020-07-10 18:19:32 mongo_pool.py [line:23] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 911.1.9.8:8900
+2020-07-10 18:21:44 mongo_pool.py [line:23] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 11.2.3.8:8900
+2020-07-10 18:24:48 mongo_pool.py [line:23] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 11.2.12.5:8900
+2020-07-10 18:42:31 mongo_pool.py [line:96] INFO : 将 jd.com 加入 proxies_pool.proxies: 11.2.3.8 的 disabled_domains 字段 
+2020-07-10 18:49:17 mongo_pool.py [line:99] INFO : 此 jd.com 已在 proxies_pool.proxies: 11.2.3.8 的 disabled_domains 字段 

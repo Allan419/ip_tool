@@ -11,3 +11,8 @@ LOG_FILENAME = 'log.log'
 
 # Proxy Validate Timeout
 VALIDATE_TIMEOUT = 10
+
+# MongoDB 
+MONGODB_URL = 'mongodb://localhost:27017/'
+MONGODB_DB_NAME = 'proxies_pool'
+MONGODB_COLLECTION_NAME = 'proxies'

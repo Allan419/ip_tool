@@ -16,4 +16,7 @@ class Proxy(object):
 
     def __str__(self):
         return str(self.__dict__)
+
+    def url(self):
+        return f"{self.ip}:{self.port}"
         
