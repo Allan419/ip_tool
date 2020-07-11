@@ -18,3 +18,91 @@
 2020-07-10 18:24:48 mongo_pool.py [line:23] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 11.2.12.5:8900
 2020-07-10 18:42:31 mongo_pool.py [line:96] INFO : 将 jd.com 加入 proxies_pool.proxies: 11.2.3.8 的 disabled_domains 字段 
 2020-07-10 18:49:17 mongo_pool.py [line:99] INFO : 此 jd.com 已在 proxies_pool.proxies: 11.2.3.8 的 disabled_domains 字段 
+2020-07-10 21:10:47 base_spider.py [line:29] INFO : https://www.kuaidaili.com/free/inha/1/ 返回的响应码为 <Response [200]>
+2020-07-10 21:10:47 base_spider.py [line:29] INFO : https://www.kuaidaili.com/free/inha/2/ 返回的响应码为 <Response [503]>
+2020-07-10 21:10:48 base_spider.py [line:29] INFO : https://www.kuaidaili.com/free/inha/3/ 返回的响应码为 <Response [200]>
+2020-07-10 21:10:49 base_spider.py [line:29] INFO : https://www.kuaidaili.com/free/inha/4/ 返回的响应码为 <Response [503]>
+2020-07-10 21:10:50 base_spider.py [line:29] INFO : https://www.kuaidaili.com/free/inha/5/ 返回的响应码为 <Response [200]>
+2020-07-10 21:10:50 base_spider.py [line:29] INFO : https://www.kuaidaili.com/free/inha/6/ 返回的响应码为 <Response [503]>
+2020-07-10 21:10:51 base_spider.py [line:29] INFO : https://www.kuaidaili.com/free/inha/7/ 返回的响应码为 <Response [200]>
+2020-07-10 21:10:52 base_spider.py [line:29] INFO : https://www.kuaidaili.com/free/inha/8/ 返回的响应码为 <Response [503]>
+2020-07-10 21:10:53 base_spider.py [line:29] INFO : https://www.kuaidaili.com/free/inha/9/ 返回的响应码为 <Response [200]>
+2020-07-10 21:10:53 base_spider.py [line:29] INFO : https://www.kuaidaili.com/free/inha/10/ 返回的响应码为 <Response [503]>
+2020-07-10 21:16:57 base_spider.py [line:31] INFO : https://www.kuaidaili.com/free/inha/1/ 返回的响应码为 <Response [200]>
+2020-07-10 21:17:01 base_spider.py [line:31] INFO : https://www.kuaidaili.com/free/inha/2/ 返回的响应码为 <Response [200]>
+2020-07-10 21:17:04 base_spider.py [line:31] INFO : https://www.kuaidaili.com/free/inha/3/ 返回的响应码为 <Response [200]>
+2020-07-10 21:17:07 base_spider.py [line:31] INFO : https://www.kuaidaili.com/free/inha/4/ 返回的响应码为 <Response [200]>
+2020-07-10 21:17:10 base_spider.py [line:31] INFO : https://www.kuaidaili.com/free/inha/5/ 返回的响应码为 <Response [200]>
+2020-07-10 21:17:12 base_spider.py [line:31] INFO : https://www.kuaidaili.com/free/inha/6/ 返回的响应码为 <Response [200]>
+2020-07-10 21:17:15 base_spider.py [line:31] INFO : https://www.kuaidaili.com/free/inha/7/ 返回的响应码为 <Response [200]>
+2020-07-10 21:17:18 base_spider.py [line:31] INFO : https://www.kuaidaili.com/free/inha/8/ 返回的响应码为 <Response [200]>
+2020-07-10 21:17:21 base_spider.py [line:31] INFO : https://www.kuaidaili.com/free/inha/9/ 返回的响应码为 <Response [200]>
+2020-07-10 21:17:23 base_spider.py [line:31] INFO : https://www.kuaidaili.com/free/inha/10/ 返回的响应码为 <Response [200]>
+2020-07-10 21:34:36 base_spider.py [line:39] INFO : https://www.kuaidaili.com/free/inha/1/ 返回的响应码为 <Response [200]>
+2020-07-10 21:34:39 base_spider.py [line:39] INFO : https://www.kuaidaili.com/free/inha/2/ 返回的响应码为 <Response [200]>
+2020-07-10 21:34:42 base_spider.py [line:39] INFO : https://www.kuaidaili.com/free/inha/3/ 返回的响应码为 <Response [200]>
+2020-07-10 21:34:44 base_spider.py [line:39] INFO : https://www.kuaidaili.com/free/inha/4/ 返回的响应码为 <Response [200]>
+2020-07-10 21:34:47 base_spider.py [line:39] INFO : https://www.kuaidaili.com/free/inha/5/ 返回的响应码为 <Response [200]>
+2020-07-10 21:34:50 base_spider.py [line:39] INFO : https://www.kuaidaili.com/free/inha/6/ 返回的响应码为 <Response [200]>
+2020-07-10 21:34:53 base_spider.py [line:39] INFO : https://www.kuaidaili.com/free/inha/7/ 返回的响应码为 <Response [200]>
+2020-07-10 21:34:55 base_spider.py [line:39] INFO : https://www.kuaidaili.com/free/inha/8/ 返回的响应码为 <Response [200]>
+2020-07-10 21:34:58 base_spider.py [line:39] INFO : https://www.kuaidaili.com/free/inha/9/ 返回的响应码为 <Response [200]>
+2020-07-10 21:35:01 base_spider.py [line:39] INFO : https://www.kuaidaili.com/free/inha/10/ 返回的响应码为 <Response [200]>
+2020-07-10 21:42:45 base_spider.py [line:39] INFO : http://www.xiladaili.com/gaoni/1/ 返回的响应码为 <Response [200]>
+2020-07-10 21:42:48 base_spider.py [line:39] INFO : http://www.xiladaili.com/gaoni/2/ 返回的响应码为 <Response [200]>
+2020-07-10 21:42:59 base_spider.py [line:39] INFO : http://www.xiladaili.com/gaoni/3/ 返回的响应码为 <Response [200]>
+2020-07-10 21:43:19 base_spider.py [line:39] INFO : http://www.xiladaili.com/gaoni/4/ 返回的响应码为 <Response [200]>
+2020-07-10 21:43:24 base_spider.py [line:39] INFO : http://www.xiladaili.com/gaoni/5/ 返回的响应码为 <Response [200]>
+2020-07-10 21:43:28 base_spider.py [line:39] INFO : http://www.xiladaili.com/gaoni/6/ 返回的响应码为 <Response [200]>
+2020-07-10 21:43:31 base_spider.py [line:39] INFO : http://www.xiladaili.com/gaoni/7/ 返回的响应码为 <Response [200]>
+2020-07-10 21:43:34 base_spider.py [line:39] INFO : http://www.xiladaili.com/gaoni/8/ 返回的响应码为 <Response [200]>
+2020-07-10 21:43:36 base_spider.py [line:39] INFO : http://www.xiladaili.com/gaoni/9/ 返回的响应码为 <Response [200]>
+2020-07-10 21:43:39 base_spider.py [line:39] INFO : http://www.xiladaili.com/gaoni/10/ 返回的响应码为 <Response [200]>
+2020-07-10 22:04:14 base_spider.py [line:39] INFO : http://www.xiladaili.com/gaoni/1/ 返回的响应码为 <Response [200]> Pause for 2 seconds
+2020-07-10 22:04:17 base_spider.py [line:39] INFO : http://www.xiladaili.com/gaoni/2/ 返回的响应码为 <Response [200]> Pause for 2 seconds
+2020-07-10 22:04:19 base_spider.py [line:39] INFO : http://www.xiladaili.com/gaoni/3/ 返回的响应码为 <Response [200]> Pause for 2 seconds
+2020-07-10 22:04:22 base_spider.py [line:39] INFO : http://www.xiladaili.com/gaoni/4/ 返回的响应码为 <Response [200]> Pause for 2 seconds
+2020-07-10 22:04:24 base_spider.py [line:39] INFO : http://www.xiladaili.com/gaoni/5/ 返回的响应码为 <Response [200]> Pause for 2 seconds
+2020-07-10 22:04:27 base_spider.py [line:39] INFO : http://www.xiladaili.com/gaoni/6/ 返回的响应码为 <Response [200]> Pause for 2 seconds
+2020-07-10 22:04:29 base_spider.py [line:39] INFO : http://www.xiladaili.com/gaoni/7/ 返回的响应码为 <Response [200]> Pause for 2 seconds
+2020-07-10 22:04:32 base_spider.py [line:39] INFO : http://www.xiladaili.com/gaoni/8/ 返回的响应码为 <Response [200]> Pause for 2 seconds
+2020-07-10 22:04:34 base_spider.py [line:39] INFO : http://www.xiladaili.com/gaoni/9/ 返回的响应码为 <Response [200]> Pause for 2 seconds
+2020-07-10 22:04:37 base_spider.py [line:39] INFO : http://www.xiladaili.com/gaoni/10/ 返回的响应码为 <Response [200]> Pause for 2 seconds
+2020-07-10 22:07:31 base_spider.py [line:40] INFO : Request for http://www.xiladaili.com/gaoni/1/ returned <Response [200]>. Pause for 2 seconds
+2020-07-10 22:07:33 base_spider.py [line:40] INFO : Request for http://www.xiladaili.com/gaoni/2/ returned <Response [200]>. Pause for 2 seconds
+2020-07-10 22:07:36 base_spider.py [line:40] INFO : Request for http://www.xiladaili.com/gaoni/3/ returned <Response [200]>. Pause for 2 seconds
+2020-07-10 22:07:38 base_spider.py [line:40] INFO : Request for http://www.xiladaili.com/gaoni/4/ returned <Response [200]>. Pause for 2 seconds
+2020-07-10 22:07:41 base_spider.py [line:40] INFO : Request for http://www.xiladaili.com/gaoni/5/ returned <Response [200]>. Pause for 2 seconds
+2020-07-10 22:07:44 base_spider.py [line:40] INFO : Request for http://www.xiladaili.com/gaoni/6/ returned <Response [200]>. Pause for 2 seconds
+2020-07-10 22:07:46 base_spider.py [line:40] INFO : Request for http://www.xiladaili.com/gaoni/7/ returned <Response [200]>. Pause for 2 seconds
+2020-07-10 22:07:49 base_spider.py [line:40] INFO : Request for http://www.xiladaili.com/gaoni/8/ returned <Response [200]>. Pause for 2 seconds
+2020-07-10 22:07:51 base_spider.py [line:40] INFO : Request for http://www.xiladaili.com/gaoni/9/ returned <Response [200]>. Pause for 2 seconds
+2020-07-10 22:07:54 base_spider.py [line:40] INFO : Request for http://www.xiladaili.com/gaoni/10/ returned <Response [200]>. Pause for 2 seconds
+2020-07-10 22:09:28 base_spider.py [line:40] INFO : Request for http://www.xiladaili.com/gaoni/1/ returned <Response [200]>. Pause for 0 seconds
+2020-07-10 22:21:04 base_spider.py [line:40] INFO : Request for http://www.xiladaili.com/gaoni/1/ returned <Response [200]>. Pause for 0 seconds
+2020-07-10 22:21:04 base_spider.py [line:40] INFO : Request for http://www.xiladaili.com/gaoni/2/ returned <Response [200]>. Pause for 0 seconds
+2020-07-10 22:21:05 base_spider.py [line:40] INFO : Request for http://www.xiladaili.com/gaoni/3/ returned <Response [200]>. Pause for 0 seconds
+2020-07-10 22:21:05 base_spider.py [line:40] INFO : Request for http://www.xiladaili.com/gaoni/4/ returned <Response [200]>. Pause for 0 seconds
+2020-07-10 22:21:06 base_spider.py [line:40] INFO : Request for http://www.xiladaili.com/gaoni/5/ returned <Response [200]>. Pause for 0 seconds
+2020-07-10 22:21:06 base_spider.py [line:40] INFO : Request for http://www.xiladaili.com/gaoni/6/ returned <Response [200]>. Pause for 0 seconds
+2020-07-10 22:21:07 base_spider.py [line:40] INFO : Request for http://www.xiladaili.com/gaoni/7/ returned <Response [200]>. Pause for 0 seconds
+2020-07-10 22:21:07 base_spider.py [line:40] INFO : Request for http://www.xiladaili.com/gaoni/8/ returned <Response [200]>. Pause for 0 seconds
+2020-07-10 22:21:08 base_spider.py [line:40] INFO : Request for http://www.xiladaili.com/gaoni/9/ returned <Response [200]>. Pause for 0 seconds
+2020-07-10 22:21:08 base_spider.py [line:40] INFO : Request for http://www.xiladaili.com/gaoni/10/ returned <Response [200]>. Pause for 0 seconds
+2020-07-10 22:22:07 base_spider.py [line:40] INFO : Request for http://www.xiladaili.com/gaoni/1/ returned <Response [200]>. Pause for 0 seconds
+2020-07-10 22:22:11 base_spider.py [line:40] INFO : Request for http://www.xiladaili.com/gaoni/2/ returned <Response [200]>. Pause for 0 seconds
+2020-07-10 22:22:13 base_spider.py [line:40] INFO : Request for http://www.xiladaili.com/gaoni/3/ returned <Response [200]>. Pause for 0 seconds
+2020-07-10 22:22:15 base_spider.py [line:40] INFO : Request for http://www.xiladaili.com/gaoni/4/ returned <Response [200]>. Pause for 0 seconds
+2020-07-10 22:22:16 base_spider.py [line:40] INFO : Request for http://www.xiladaili.com/gaoni/5/ returned <Response [200]>. Pause for 0 seconds
+2020-07-10 22:22:17 base_spider.py [line:40] INFO : Request for http://www.xiladaili.com/gaoni/6/ returned <Response [200]>. Pause for 0 seconds
+2020-07-10 22:22:18 base_spider.py [line:40] INFO : Request for http://www.xiladaili.com/gaoni/7/ returned <Response [200]>. Pause for 0 seconds
+2020-07-10 22:22:19 base_spider.py [line:40] INFO : Request for http://www.xiladaili.com/gaoni/8/ returned <Response [200]>. Pause for 0 seconds
+2020-07-10 22:22:20 base_spider.py [line:40] INFO : Request for http://www.xiladaili.com/gaoni/9/ returned <Response [200]>. Pause for 0 seconds
+2020-07-10 22:26:03 base_spider.py [line:40] INFO : Request for http://www.xiladaili.com/gaoni/1/ returned <Response [200]>. Pause for 2 seconds
+2020-07-10 22:26:46 base_spider.py [line:40] INFO : Request for http://www.xiladaili.com/gaoni/1/ returned <Response [200]>. Pause for 2 seconds
+2020-07-10 22:39:10 base_spider.py [line:40] INFO : Request for http://www.xiladaili.com/gaoni/1/ returned <Response [200]>. Pause for 3 seconds
+2020-07-10 22:40:44 base_spider.py [line:40] INFO : Request for https://www.kuaidaili.com/free/inha/1/ returned <Response [200]>. Pause for 2 seconds
+2020-07-10 22:41:23 base_spider.py [line:40] INFO : Request for https://www.kuaidaili.com/free/inha/1/ returned <Response [200]>. Pause for 3 seconds
+2020-07-10 23:01:25 base_spider.py [line:40] INFO : Request for http://www.xiladaili.com/gaoni/1/ returned <Response [200]>. Pause for 3 seconds
+2020-07-10 23:04:31 base_spider.py [line:40] INFO : Request for http://www.xiladaili.com/gaoni/1/ returned <Response [200]>. Pause for 1 seconds
+2020-07-10 23:05:58 base_spider.py [line:40] INFO : Request for http://www.xiladaili.com/gaoni/1/ returned <Response [200]>. Pause for 1 seconds

@@ -17,7 +17,7 @@ def check_proxy(proxy):
     :param proxy: 代理IP模型对象
     :return 检查后的代理IP对象
     """
-
+    # print(f"正在检测 {proxy}")
     # 准备代理IP字典
     proxies = {
         'http' : f'http://{proxy.ip}:{proxy.port}',
@@ -31,11 +31,11 @@ def check_proxy(proxy):
     # 支持协议 support 'http':'protocol=0; 'https':'protocol=1';both: 'protocol=2'
     if http and https:
         proxy.protocol = 2
-        proxy.nick_type = https_nick_tyoe
+        proxy.nick_type = https_nick_type
         proxy.speed = https_speed
     elif https:
         proxy.protocol = 1
-        proxy.nick_type = https_nick_tyoe
+        proxy.nick_type = https_nick_type
         proxy.speed = https_speed
     elif http:
         proxy.protocol = 0
@@ -56,12 +56,13 @@ def __check_http_proxies(proxies, is_http=True):
         test_url = 'http://httpbin.org/get'
     else:
         test_url = 'https://httpbin.org/get'
-
+    # print("检测中 $$$$$$$$$$$$$$$$$$$$$$$$$$")
     try:
         start = time.time()
+        # print(f"正在检测 ************************************* ")
         response = requests.get(test_url, headers=get_request_headers(), proxies=proxies, timeout=VALIDATE_TIMEOUT)
-
         if response.ok:
+            
             speed = round(time.time() - start, 2)
             content = json.loads(response.text)
             origin = content['origin']
@@ -81,10 +82,13 @@ def __check_http_proxies(proxies, is_http=True):
 
     except Exception as e:
         # logger.exception(e)
+        # print(e)
         return False, nick_type, speed
 
 # if __name__ == '__main__':
 
-#     proxy = Proxy('150.138.106.80','80')
-#     a = check_proxy(proxy)
-#     print(a)
+    # proxy = Proxy('150.138.106.80','80')
+    # a = check_proxy(proxy)
+    # proxy = Proxy('182.46.97.28','9999')
+    # a = check_proxy(proxy)
+    # print(a)

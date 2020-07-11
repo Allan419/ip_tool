@@ -1,12 +1,12 @@
 import sys
 import logging
-from settings import LOG_LEVEL, LOG_FORMAT, LOG_DATEFMT, LOG_FILENAME
+from settings import LOG_LEVEL, LOG_FORMAT, LOG_DATEFMT, LOG_FILENAME, LOG_PROXY_SPIDER
 
 class Logger(object):
-    def __init__(self):
+    def __init__(self, log_filename):
         self._logger = logging.getLogger()
         self.formatter = logging.Formatter(fmt=LOG_FORMAT, datefmt=LOG_DATEFMT)
-        self._logger.addHandler(self._get_file_handler(LOG_FILENAME))
+        self._logger.addHandler(self._get_file_handler(log_filename))
         self._logger.addHandler(self._get_console_handler())
         self._logger.setLevel(LOG_LEVEL)
 
@@ -24,7 +24,8 @@ class Logger(object):
     def logger(self):
         return self._logger
 
-logger = Logger().logger
+logger = Logger(LOG_FILENAME).logger
+loggerProxySpider = Logger(LOG_PROXY_SPIDER).logger
 
 if __name__ == '__main__':
     logger.debug("调试信息")

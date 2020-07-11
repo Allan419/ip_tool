@@ -1,10 +1,13 @@
 import random
 import os
 
+# user_agent_file_location = f"{os.path.dirname(os.getcwd())}/assets/useragents"
+
 def get_random_user_agent():
-    filename = random.choice([f for f in os.listdir("../assets/useragents") 
-                                if not f.startswith('.')])
-    with open(f"../assets/useragents/{filename}") as file:
+    filename = random.choice([f for f in os.listdir("assets/useragents") if not f.startswith('.')])
+    # filename = random.choice([f for f in os.listdir(user_agent_file_location) if not f.startswith('.')])
+
+    with open(f"assets/useragents/{filename}") as file:
         line = file.readlines()
         return random.choice(line).split('\n')[0]
 
