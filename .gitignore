@@ -1,3 +1,4 @@
 env
 test*.py
 __*__
+.DS_Store
