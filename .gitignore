@@ -3,3 +3,4 @@ test*.py
 __*__
 .DS_Store
 *.log
+ip_tool.egg-info
