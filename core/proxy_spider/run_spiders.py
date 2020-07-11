@@ -60,4 +60,5 @@ class RunSpider(object):
             time.sleep(RUN_SPIDERS_INTERVAL*60*60/2+1)
 
 if __name__ == '__main__':
+    
     RunSpider.start()

@@ -4,7 +4,7 @@ from lxml import etree
 
 from utils.http import get_request_headers
 from domain import Proxy
-from utils.log import loggerProxySpider
+from utils.log import logger
 
 IP_PATTERN = re.compile('^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}')
 PORT_PATTERN = re.compile('\d{1,5}$')
@@ -32,11 +32,10 @@ class BaseSpider(object):
     def get_page_from_url(self, url):
         # 发送URL请求，返回响应
         headers = get_request_headers()
-        # print(user_agent)
         response = requests.get(url, headers=headers)
         pause = random.uniform(1, 3)
         time.sleep(pause)
-        loggerProxySpider.info(f"Request for {url} returned {response}. Pause for {pause} seconds")
+        logger.info(f"Request for {url} returned {response}. Pause for {pause} seconds")
         return response.content
 
     def get_first_from_list(self, _list):
@@ -63,21 +62,21 @@ class BaseSpider(object):
             proxies = self.get_proxies_from_page(page)
             yield from proxies
 
-# if __name__ == '__main__':
+if __name__ == '__main__':
 
-#     url = ['https://www.kuaidaili.com/free/']
-#     group_xpath = "//*[@id='list']/table/tbody/tr"
-#     detail_xpath = {
-#         'ip': './td[1]/text()',
-#         'port': './td[2]/text()',
-#         'area': './td[5]/text()'
-#     }
+    url = ['https://www.kuaidaili.com/free/']
+    group_xpath = "//*[@id='list']/table/tbody/tr"
+    detail_xpath = {
+        'ip': './td[1]/text()',
+        'port': './td[2]/text()',
+        'area': './td[5]/text()'
+    }
     
 
-#     bs = BaseSpider(url, group_xpath, detail_xpath)
-#     print(bs.get_proxies())
-#     for proxy in bs.get_proxies():
-#          print(proxy)
+    bs = BaseSpider(url, group_xpath, detail_xpath)
+    print(bs.get_proxies())
+    for proxy in bs.get_proxies():
+         print(proxy)
    
 
 
