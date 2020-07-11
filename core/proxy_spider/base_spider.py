@@ -6,8 +6,9 @@ from utils.http import get_request_headers
 from domain import Proxy
 from utils.log import logger
 
-IP_PATTERN = re.compile('^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}')
-PORT_PATTERN = re.compile('\d{1,5}$')
+IP_PATTERN = re.compile('^[\s?]*(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})')
+PORT_PATTERN = re.compile('(\d{1,5})[\s?]*$')
+AREA_PATTERN = re.compile('^[\s?]*(\w*[\s?]*\w*[\s?]*\w*[\s?]*\w*)')
 
 class BaseSpider(object):
     """通用爬虫类  
@@ -48,9 +49,9 @@ class BaseSpider(object):
         # 获取包含代理IP信息的标签列表
         trs = element.xpath(self.group_xpath)
         for tr in trs:
-            ip = IP_PATTERN.search(self.get_first_from_list(tr.xpath(self.detail_xpath['ip']))).group()
-            port = PORT_PATTERN.search(self.get_first_from_list(tr.xpath(self.detail_xpath['port']))).group()
-            area = self.get_first_from_list(tr.xpath(self.detail_xpath['area']))
+            ip = IP_PATTERN.search(self.get_first_from_list(tr.xpath(self.detail_xpath['ip']))).groups()[0]
+            port = PORT_PATTERN.search(self.get_first_from_list(tr.xpath(self.detail_xpath['port']))).groups()[0]
+            area = AREA_PATTERN.search(self.get_first_from_list(tr.xpath(self.detail_xpath['area']))).groups()[0]
 
             proxy = Proxy(ip=ip, port=port, area=area)
             yield proxy

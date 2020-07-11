@@ -1,3 +1,524 @@
 2020-07-11 13:30:16 mongo_pool.py [line:31] INFO : 在数据库 proxies_pool.proxies 更新代理 : 144.76.179.68:59991
 2020-07-11 13:30:19 mongo_pool.py [line:31] INFO : 在数据库 proxies_pool.proxies 更新代理 : 103.79.155.42:46977
 2020-07-11 13:30:21 mongo_pool.py [line:31] INFO : 在数据库 proxies_pool.proxies 更新代理 : 184.82.128.211:8080
+2020-07-11 13:50:17 mongo_pool.py [line:31] INFO : 在数据库 proxies_pool.proxies 更新代理 : 144.76.179.68:59991
+2020-07-11 13:50:19 mongo_pool.py [line:31] INFO : 在数据库 proxies_pool.proxies 更新代理 : 184.82.128.211:8080
+2020-07-11 13:50:26 mongo_pool.py [line:31] INFO : 在数据库 proxies_pool.proxies 更新代理 : 103.79.155.42:46977
+2020-07-11 13:50:46 mongo_pool.py [line:31] INFO : 在数据库 proxies_pool.proxies 更新代理 : 144.76.179.68:59991
+2020-07-11 13:50:46 mongo_pool.py [line:31] INFO : 在数据库 proxies_pool.proxies 更新代理 : 103.79.155.42:46977
+2020-07-11 13:50:47 mongo_pool.py [line:31] INFO : 在数据库 proxies_pool.proxies 更新代理 : 184.82.128.211:8080
+2020-07-11 13:55:40 mongo_pool.py [line:31] INFO : 在数据库 proxies_pool.proxies 更新代理 : 103.79.155.42:46977
+2020-07-11 13:55:43 mongo_pool.py [line:31] INFO : 在数据库 proxies_pool.proxies 更新代理 : 144.76.179.68:59991
+2020-07-11 13:55:46 mongo_pool.py [line:31] INFO : 在数据库 proxies_pool.proxies 更新代理 : 184.82.128.211:8080
+2020-07-11 13:58:11 mongo_pool.py [line:31] INFO : 在数据库 proxies_pool.proxies 更新代理 : 184.82.128.211:8080
+2020-07-11 13:58:14 mongo_pool.py [line:31] INFO : 在数据库 proxies_pool.proxies 更新代理 : 144.76.179.68:59991
+2020-07-11 13:58:17 mongo_pool.py [line:31] INFO : 在数据库 proxies_pool.proxies 更新代理 : 103.79.155.42:46977
+2020-07-11 14:00:25 mongo_pool.py [line:31] INFO : 在数据库 proxies_pool.proxies 更新代理 : 144.76.179.68:59991
+2020-07-11 14:00:35 mongo_pool.py [line:31] INFO : 在数据库 proxies_pool.proxies 更新代理 : 103.79.155.42:46977
+2020-07-11 14:00:38 mongo_pool.py [line:31] INFO : 在数据库 proxies_pool.proxies 更新代理 : 184.82.128.211:8080
+2020-07-11 14:37:53 _internal.py [line:113] INFO :  * Running on http://0.0.0.0:16888/ (Press CTRL+C to quit)
+2020-07-11 14:37:54 app.py [line:1891] ERROR : Exception on /random [GET]
+Traceback (most recent call last):
+  File "/Users/l/Documents/Projects/ip_pool/core/db/mongo_pool.py", line 91, in random_proxy
+    return random.choice(proxy_list)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/random.py", line 290, in choice
+    raise IndexError('Cannot choose from an empty sequence') from None
+IndexError: Cannot choose from an empty sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/l/Documents/Projects/ip_pool/env/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/l/Documents/Projects/ip_pool/env/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/l/Documents/Projects/ip_pool/env/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/l/Documents/Projects/ip_pool/env/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/l/Documents/Projects/ip_pool/env/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/l/Documents/Projects/ip_pool/env/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/l/Documents/Projects/ip_pool/core/proxy_api.py", line 15, in random
+    proxies = self.mongo_pool.random_proxy(protocol, domain)
+  File "/Users/l/Documents/Projects/ip_pool/core/db/mongo_pool.py", line 93, in random_proxy
+    logger("当前没有满足要求的代理IP")
+TypeError: 'RootLogger' object is not callable
+2020-07-11 14:37:54 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:37:54] "[35m[1mGET /random?protocol=https&domain=jd.com HTTP/1.1[0m" 500 -
+2020-07-11 14:37:59 app.py [line:1891] ERROR : Exception on /random [GET]
+Traceback (most recent call last):
+  File "/Users/l/Documents/Projects/ip_pool/env/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/l/Documents/Projects/ip_pool/env/lib/python3.8/site-packages/flask/app.py", line 1953, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Users/l/Documents/Projects/ip_pool/env/lib/python3.8/site-packages/flask/app.py", line 1968, in finalize_request
+    response = self.make_response(rv)
+  File "/Users/l/Documents/Projects/ip_pool/env/lib/python3.8/site-packages/flask/app.py", line 2127, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, tuple, Response instance, or WSGI callable, but it was a Proxy.
+2020-07-11 14:37:59 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:37:59] "[35m[1mGET /random HTTP/1.1[0m" 500 -
+2020-07-11 14:38:02 app.py [line:1891] ERROR : Exception on /random [GET]
+Traceback (most recent call last):
+  File "/Users/l/Documents/Projects/ip_pool/env/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/l/Documents/Projects/ip_pool/env/lib/python3.8/site-packages/flask/app.py", line 1953, in full_dispatch_request
+    return self.finalize_request(rv)
+  File "/Users/l/Documents/Projects/ip_pool/env/lib/python3.8/site-packages/flask/app.py", line 1968, in finalize_request
+    response = self.make_response(rv)
+  File "/Users/l/Documents/Projects/ip_pool/env/lib/python3.8/site-packages/flask/app.py", line 2127, in make_response
+    raise TypeError(
+TypeError: The view function did not return a valid response. The return type must be a string, dict, tuple, Response instance, or WSGI callable, but it was a Proxy.
+2020-07-11 14:38:02 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:38:02] "[35m[1mGET /random HTTP/1.1[0m" 500 -
+2020-07-11 14:38:28 _internal.py [line:113] INFO :  * Running on http://0.0.0.0:16888/ (Press CTRL+C to quit)
+2020-07-11 14:38:28 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:38:28] "[37mGET /random HTTP/1.1[0m" 200 -
+2020-07-11 14:38:30 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:38:30] "[37mGET /random HTTP/1.1[0m" 200 -
+2020-07-11 14:53:45 _internal.py [line:113] INFO :  * Running on http://0.0.0.0:16888/ (Press CTRL+C to quit)
+2020-07-11 14:53:45 app.py [line:1891] ERROR : Exception on /random [GET]
+Traceback (most recent call last):
+  File "/Users/l/Documents/Projects/ip_pool/env/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/l/Documents/Projects/ip_pool/env/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/l/Documents/Projects/ip_pool/env/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/l/Documents/Projects/ip_pool/env/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/l/Documents/Projects/ip_pool/env/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/l/Documents/Projects/ip_pool/env/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/l/Documents/Projects/ip_pool/core/proxy_api.py", line 20, in random
+    return f"{proxy.ip}:{proxy.port}"
+NameError: name 'proxy' is not defined
+2020-07-11 14:53:45 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:53:45] "[35m[1mGET /random HTTP/1.1[0m" 500 -
+2020-07-11 14:55:44 app.py [line:1891] ERROR : Exception on /random [GET]
+Traceback (most recent call last):
+  File "/Users/l/Documents/Projects/ip_pool/env/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/l/Documents/Projects/ip_pool/env/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/l/Documents/Projects/ip_pool/env/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/l/Documents/Projects/ip_pool/env/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/l/Documents/Projects/ip_pool/env/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/l/Documents/Projects/ip_pool/env/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/l/Documents/Projects/ip_pool/core/proxy_api.py", line 20, in random
+    return f"{proxy.ip}:{proxy.port}"
+NameError: name 'proxy' is not defined
+2020-07-11 14:55:44 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:55:44] "[35m[1mGET /random HTTP/1.1[0m" 500 -
+2020-07-11 14:57:07 _internal.py [line:113] INFO :  * Running on http://0.0.0.0:16888/ (Press CTRL+C to quit)
+2020-07-11 14:57:08 app.py [line:1891] ERROR : Exception on /random [GET]
+Traceback (most recent call last):
+  File "/Users/l/Documents/Projects/ip_pool/env/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/l/Documents/Projects/ip_pool/env/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/l/Documents/Projects/ip_pool/env/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/l/Documents/Projects/ip_pool/env/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/l/Documents/Projects/ip_pool/env/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/l/Documents/Projects/ip_pool/env/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/l/Documents/Projects/ip_pool/core/proxy_api.py", line 20, in random
+    return f"{proxy.ip}:{proxy.port}"
+NameError: name 'proxy' is not defined
+2020-07-11 14:57:08 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:57:08] "[35m[1mGET /random HTTP/1.1[0m" 500 -
+2020-07-11 14:57:09 app.py [line:1891] ERROR : Exception on /random [GET]
+Traceback (most recent call last):
+  File "/Users/l/Documents/Projects/ip_pool/env/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/l/Documents/Projects/ip_pool/env/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/l/Documents/Projects/ip_pool/env/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/l/Documents/Projects/ip_pool/env/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/l/Documents/Projects/ip_pool/env/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/l/Documents/Projects/ip_pool/env/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/l/Documents/Projects/ip_pool/core/proxy_api.py", line 20, in random
+    return f"{proxy.ip}:{proxy.port}"
+NameError: name 'proxy' is not defined
+2020-07-11 14:57:09 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:57:09] "[35m[1mGET /random HTTP/1.1[0m" 500 -
+2020-07-11 14:57:54 _internal.py [line:113] INFO :  * Running on http://0.0.0.0:16888/ (Press CTRL+C to quit)
+2020-07-11 14:57:55 app.py [line:1891] ERROR : Exception on /random [GET]
+Traceback (most recent call last):
+  File "/Users/l/Documents/Projects/ip_pool/env/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/l/Documents/Projects/ip_pool/env/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/l/Documents/Projects/ip_pool/env/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/l/Documents/Projects/ip_pool/env/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/l/Documents/Projects/ip_pool/env/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/l/Documents/Projects/ip_pool/env/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/l/Documents/Projects/ip_pool/core/proxy_api.py", line 21, in random
+    return f"{proxy.ip}:{proxy.port}"
+NameError: name 'proxy' is not defined
+2020-07-11 14:57:55 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:57:55] "[35m[1mGET /random HTTP/1.1[0m" 500 -
+2020-07-11 14:58:26 _internal.py [line:113] INFO :  * Running on http://0.0.0.0:16888/ (Press CTRL+C to quit)
+2020-07-11 14:58:27 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:58:27] "[37mGET /random HTTP/1.1[0m" 200 -
+2020-07-11 14:58:30 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:58:30] "[37mGET /random HTTP/1.1[0m" 200 -
+2020-07-11 14:58:32 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:58:32] "[37mGET /random HTTP/1.1[0m" 200 -
+2020-07-11 14:58:33 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:58:33] "[37mGET /random HTTP/1.1[0m" 200 -
+2020-07-11 14:58:34 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:58:34] "[37mGET /random HTTP/1.1[0m" 200 -
+2020-07-11 14:58:35 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:58:35] "[37mGET /random HTTP/1.1[0m" 200 -
+2020-07-11 14:58:37 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:58:37] "[37mGET /random HTTP/1.1[0m" 200 -
+2020-07-11 14:58:39 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:58:39] "[37mGET /random HTTP/1.1[0m" 200 -
+2020-07-11 14:58:39 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:58:39] "[37mGET /random HTTP/1.1[0m" 200 -
+2020-07-11 14:58:57 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:58:57] "[37mGET /random HTTP/1.1[0m" 200 -
+2020-07-11 14:58:57 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:58:57] "[37mGET /random HTTP/1.1[0m" 200 -
+2020-07-11 14:59:07 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:59:07] "[37mGET /random?protocol=http HTTP/1.1[0m" 200 -
+2020-07-11 14:59:09 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:59:09] "[37mGET /random?protocol=http HTTP/1.1[0m" 200 -
+2020-07-11 14:59:10 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:59:10] "[37mGET /random?protocol=http HTTP/1.1[0m" 200 -
+2020-07-11 14:59:11 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:59:11] "[37mGET /random?protocol=http HTTP/1.1[0m" 200 -
+2020-07-11 14:59:12 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:59:12] "[37mGET /random?protocol=http HTTP/1.1[0m" 200 -
+2020-07-11 14:59:13 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:59:13] "[37mGET /random?protocol=http HTTP/1.1[0m" 200 -
+2020-07-11 14:59:13 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:59:13] "[37mGET /random?protocol=http HTTP/1.1[0m" 200 -
+2020-07-11 14:59:14 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:59:14] "[37mGET /random?protocol=http HTTP/1.1[0m" 200 -
+2020-07-11 14:59:14 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:59:14] "[37mGET /random?protocol=http HTTP/1.1[0m" 200 -
+2020-07-11 14:59:14 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:59:14] "[37mGET /random?protocol=http HTTP/1.1[0m" 200 -
+2020-07-11 14:59:15 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:59:15] "[37mGET /random?protocol=http HTTP/1.1[0m" 200 -
+2020-07-11 14:59:15 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:59:15] "[37mGET /random?protocol=http HTTP/1.1[0m" 200 -
+2020-07-11 14:59:16 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:59:16] "[37mGET /random?protocol=http HTTP/1.1[0m" 200 -
+2020-07-11 14:59:16 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:59:16] "[37mGET /random?protocol=http HTTP/1.1[0m" 200 -
+2020-07-11 14:59:16 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:59:16] "[37mGET /random?protocol=http HTTP/1.1[0m" 200 -
+2020-07-11 14:59:17 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:59:17] "[37mGET /random?protocol=http HTTP/1.1[0m" 200 -
+2020-07-11 14:59:17 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:59:17] "[37mGET /random?protocol=http HTTP/1.1[0m" 200 -
+2020-07-11 14:59:17 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:59:17] "[37mGET /random?protocol=http HTTP/1.1[0m" 200 -
+2020-07-11 14:59:18 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:59:18] "[37mGET /random?protocol=http HTTP/1.1[0m" 200 -
+2020-07-11 14:59:18 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:59:18] "[37mGET /random?protocol=http HTTP/1.1[0m" 200 -
+2020-07-11 14:59:18 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:59:18] "[37mGET /random?protocol=http HTTP/1.1[0m" 200 -
+2020-07-11 14:59:19 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:59:19] "[37mGET /random?protocol=http HTTP/1.1[0m" 200 -
+2020-07-11 14:59:19 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:59:19] "[37mGET /random?protocol=http HTTP/1.1[0m" 200 -
+2020-07-11 14:59:19 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:59:19] "[37mGET /random?protocol=http HTTP/1.1[0m" 200 -
+2020-07-11 14:59:20 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:59:20] "[37mGET /random?protocol=http HTTP/1.1[0m" 200 -
+2020-07-11 14:59:20 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:59:20] "[37mGET /random?protocol=http HTTP/1.1[0m" 200 -
+2020-07-11 14:59:20 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:59:20] "[37mGET /random?protocol=http HTTP/1.1[0m" 200 -
+2020-07-11 14:59:20 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:59:20] "[37mGET /random?protocol=http HTTP/1.1[0m" 200 -
+2020-07-11 14:59:21 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:59:21] "[37mGET /random?protocol=http HTTP/1.1[0m" 200 -
+2020-07-11 14:59:21 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:59:21] "[37mGET /random?protocol=http HTTP/1.1[0m" 200 -
+2020-07-11 14:59:21 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:59:21] "[37mGET /random?protocol=http HTTP/1.1[0m" 200 -
+2020-07-11 14:59:43 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:59:43] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 14:59:45 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:59:45] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 14:59:46 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:59:46] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 14:59:46 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:59:46] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 14:59:47 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:59:47] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 14:59:48 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:59:48] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 14:59:48 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:59:48] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 14:59:49 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:59:49] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 14:59:49 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:59:49] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 14:59:50 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:59:50] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 14:59:50 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:59:50] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 14:59:50 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:59:50] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 14:59:51 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:59:51] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 14:59:51 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:59:51] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 14:59:52 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:59:52] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 14:59:52 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:59:52] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 14:59:52 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 14:59:52] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 15:00:07 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 15:00:07] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 15:00:08 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 15:00:08] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 15:00:09 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 15:00:09] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 15:00:09 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 15:00:09] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 15:00:09 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 15:00:09] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 15:00:10 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 15:00:10] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 15:00:10 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 15:00:10] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 15:00:11 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 15:00:11] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 15:00:11 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 15:00:11] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 15:00:11 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 15:00:11] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 15:00:12 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 15:00:12] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 15:00:12 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 15:00:12] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 15:00:12 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 15:00:12] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 15:00:13 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 15:00:13] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 15:00:13 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 15:00:13] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 15:00:13 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 15:00:13] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 15:00:14 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 15:00:14] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 15:00:14 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 15:00:14] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 15:00:14 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 15:00:14] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 15:00:15 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 15:00:15] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 15:00:15 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 15:00:15] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 15:00:15 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 15:00:15] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 15:00:15 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 15:00:15] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 15:00:16 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 15:00:16] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 15:00:16 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 15:00:16] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 15:00:17 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 15:00:17] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 15:00:17 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 15:00:17] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 15:00:17 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 15:00:17] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 15:00:18 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 15:00:18] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 15:00:18 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 15:00:18] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 15:00:18 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 15:00:18] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 15:00:19 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 15:00:19] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 15:00:19 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 15:00:19] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 15:00:19 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 15:00:19] "[37mGET /random?protocol=http&domain=jd.com HTTP/1.1[0m" 200 -
+2020-07-11 15:09:47 _internal.py [line:113] INFO :  * Running on http://0.0.0.0:16888/ (Press CTRL+C to quit)
+2020-07-11 15:09:52 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 15:09:52] "[37mGET /proxies HTTP/1.1[0m" 200 -
+2020-07-11 15:11:05 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 15:11:05] "[37mGET /proxies HTTP/1.1[0m" 200 -
+2020-07-11 15:11:32 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 15:11:32] "[37mGET /proxies HTTP/1.1[0m" 200 -
+2020-07-11 15:11:34 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 15:11:34] "[37mGET /proxies HTTP/1.1[0m" 200 -
+2020-07-11 15:12:08 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 15:12:08] "[37mGET /proxies HTTP/1.1[0m" 200 -
+2020-07-11 15:12:12 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 15:12:12] "[37mGET /proxies HTTP/1.1[0m" 200 -
+2020-07-11 15:12:21 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 15:12:21] "[37mGET /proxies HTTP/1.1[0m" 200 -
+2020-07-11 15:12:34 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 15:12:34] "[37mGET /proxies HTTP/1.1[0m" 200 -
+2020-07-11 15:13:50 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 15:13:50] "[37mGET /proxies HTTP/1.1[0m" 200 -
+2020-07-11 15:14:31 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 15:14:31] "[37mGET /proxies HTTP/1.1[0m" 200 -
+2020-07-11 15:14:39 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 15:14:39] "[37mGET /proxies HTTP/1.1[0m" 200 -
+2020-07-11 15:14:47 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 15:14:47] "[37mGET /proxies HTTP/1.1[0m" 200 -
+2020-07-11 15:17:32 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 15:17:32] "[37mGET /proxies?protocol=http HTTP/1.1[0m" 200 -
+2020-07-11 15:31:12 base_spider.py [line:38] INFO : Request for https://www.7yip.cn/free/?action=china&page=1 returned <Response [200]>. Pause for 1.7364676909153325 seconds
+2020-07-11 15:33:32 base_spider.py [line:38] INFO : Request for http://www.xiladaili.com/gaoni/1/ returned <Response [502]>. Pause for 2.2509984220713433 seconds
+2020-07-11 15:36:22 base_spider.py [line:38] INFO : Request for https://www.7yip.cn/free/?action=china&page=1 returned <Response [200]>. Pause for 2.9491712794688483 seconds
+2020-07-11 15:37:31 base_spider.py [line:38] INFO : Request for https://www.kuaidaili.com/free/inha/1/ returned <Response [200]>. Pause for 2.5835537094971945 seconds
+2020-07-11 15:37:36 base_spider.py [line:38] INFO : Request for https://www.kuaidaili.com/free/inha/2/ returned <Response [200]>. Pause for 2.5766134590208667 seconds
+2020-07-11 15:39:58 base_spider.py [line:38] INFO : Request for https://www.7yip.cn/free/?action=china&page=1 returned <Response [200]>. Pause for 1.699408511966771 seconds
+2020-07-11 15:40:01 base_spider.py [line:38] INFO : Request for https://www.7yip.cn/free/?action=china&page=2 returned <Response [200]>. Pause for 1.885886918114177 seconds
+2020-07-11 15:51:25 base_spider.py [line:38] INFO : Request for http://www.89ip.cn/index_1.html returned <Response [200]>. Pause for 2.973522943355931 seconds
+2020-07-11 16:00:23 base_spider.py [line:38] INFO : Request for http://www.89ip.cn/index_1.html returned <Response [200]>. Pause for 1.8787838488320492 seconds
+2020-07-11 16:00:27 base_spider.py [line:38] INFO : Request for http://www.89ip.cn/index_2.html returned <Response [200]>. Pause for 1.908077055896729 seconds
+2020-07-11 16:01:15 base_spider.py [line:38] INFO : Request for http://www.89ip.cn/index_1.html returned <Response [200]>. Pause for 1.3351235810686695 seconds
+2020-07-11 16:01:18 base_spider.py [line:38] INFO : Request for http://www.89ip.cn/index_2.html returned <Response [200]>. Pause for 1.4092388069144357 seconds
+2020-07-11 16:05:33 base_spider.py [line:38] INFO : Request for http://www.89ip.cn/index_1.html returned <Response [200]>. Pause for 2.921631666656374 seconds
+2020-07-11 16:05:36 base_spider.py [line:38] INFO : Request for http://www.89ip.cn/index_2.html returned <Response [200]>. Pause for 2.6111826530211717 seconds
+2020-07-11 16:06:03 base_spider.py [line:38] INFO : Request for https://www.7yip.cn/free/?action=china&page=1 returned <Response [200]>. Pause for 1.393556049587715 seconds
+2020-07-11 16:08:30 base_spider.py [line:38] INFO : Request for https://www.7yip.cn/free/?action=china&page=1 returned <Response [200]>. Pause for 2.0559342335821493 seconds
+2020-07-11 16:08:47 base_spider.py [line:38] INFO : Request for http://www.89ip.cn/index_1.html returned <Response [200]>. Pause for 1.8189592593443735 seconds
+2020-07-11 16:15:34 base_spider.py [line:39] INFO : Request for http://www.89ip.cn/index_1.html returned <Response [200]>. Pause for 1.7683469463177093 seconds
+2020-07-11 16:19:32 base_spider.py [line:39] INFO : Request for https://www.7yip.cn/free/?action=china&page=1 returned <Response [200]>. Pause for 1.014920276824239 seconds
+2020-07-11 16:20:09 base_spider.py [line:39] INFO : Request for http://www.xiladaili.com/gaoni/1/ returned <Response [200]>. Pause for 1.195985041714936 seconds
+2020-07-11 16:20:15 base_spider.py [line:39] INFO : Request for http://www.xiladaili.com/gaoni/2/ returned <Response [200]>. Pause for 1.0348870162872372 seconds
+2020-07-11 16:20:39 base_spider.py [line:39] INFO : Request for https://www.kuaidaili.com/free/inha/1/ returned <Response [200]>. Pause for 1.653612113610689 seconds
+2020-07-11 16:21:11 base_spider.py [line:39] INFO : Request for http://www.89ip.cn/index_1.html returned <Response [200]>. Pause for 1.692532271369324 seconds
+2020-07-11 16:27:28 base_spider.py [line:39] INFO : Request for http://www.ip3366.net/?stype=1&page=1 returned <Response [200]>. Pause for 1.3860673821133376 seconds
+2020-07-11 16:41:16 base_spider.py [line:39] INFO : Request for http://www.kxdaili.com/dailiip/1/1.html returned <Response [200]>. Pause for 1.149341641344209 seconds
+2020-07-11 16:41:20 base_spider.py [line:39] INFO : Request for http://www.kxdaili.com/dailiip/1/2.html returned <Response [200]>. Pause for 2.2847737336890113 seconds
+2020-07-11 16:41:22 base_spider.py [line:39] INFO : Request for http://www.kxdaili.com/dailiip/1/3.html returned <Response [200]>. Pause for 1.345754414235431 seconds
+2020-07-11 16:41:25 base_spider.py [line:39] INFO : Request for http://www.kxdaili.com/dailiip/1/4.html returned <Response [200]>. Pause for 1.2577067076437212 seconds
+2020-07-11 16:41:27 base_spider.py [line:39] INFO : Request for http://www.kxdaili.com/dailiip/1/5.html returned <Response [200]>. Pause for 1.7440417101865713 seconds
+2020-07-11 16:41:30 base_spider.py [line:39] INFO : Request for http://www.kxdaili.com/dailiip/1/6.html returned <Response [200]>. Pause for 1.1374679532684295 seconds
+2020-07-11 16:41:32 base_spider.py [line:39] INFO : Request for http://www.kxdaili.com/dailiip/1/7.html returned <Response [200]>. Pause for 1.6076502543916007 seconds
+2020-07-11 16:41:36 base_spider.py [line:39] INFO : Request for http://www.kxdaili.com/dailiip/1/8.html returned <Response [200]>. Pause for 2.2940228745051474 seconds
+2020-07-11 16:41:39 base_spider.py [line:39] INFO : Request for http://www.kxdaili.com/dailiip/1/9.html returned <Response [200]>. Pause for 1.8566980423906165 seconds
+2020-07-11 16:41:43 base_spider.py [line:39] INFO : Request for http://www.kxdaili.com/dailiip/2/1.html returned <Response [200]>. Pause for 2.741132643315881 seconds
+2020-07-11 16:41:45 base_spider.py [line:39] INFO : Request for http://www.kxdaili.com/dailiip/2/2.html returned <Response [200]>. Pause for 1.208791335727146 seconds
+2020-07-11 16:41:47 base_spider.py [line:39] INFO : Request for http://www.kxdaili.com/dailiip/2/3.html returned <Response [200]>. Pause for 1.0631108517651 seconds
+2020-07-11 16:42:56 base_spider.py [line:39] INFO : Request for http://www.kxdaili.com/dailiip/1/1.html returned <Response [200]>. Pause for 1.0761788472520752 seconds
+2020-07-11 16:42:58 base_spider.py [line:39] INFO : Request for http://www.kxdaili.com/dailiip/1/2.html returned <Response [200]>. Pause for 1.386549417744523 seconds
+2020-07-11 16:51:06 base_spider.py [line:39] INFO : Request for https://ip.jiangxianli.com/?page=1 returned <Response [200]>. Pause for 2.899393833667153 seconds
+2020-07-11 16:52:56 base_spider.py [line:39] INFO : Request for http://www.89ip.cn/index_1.html returned <Response [200]>. Pause for 1.1325895951873215 seconds
+2020-07-11 16:52:57 base_spider.py [line:39] INFO : Request for https://www.kuaidaili.com/free/inha/1/ returned <Response [200]>. Pause for 2.0625529742912314 seconds
+2020-07-11 16:52:58 base_spider.py [line:39] INFO : Request for http://www.xiladaili.com/gaoni/1/ returned <Response [200]>. Pause for 1.3040069366944962 seconds
+2020-07-11 16:52:58 base_spider.py [line:39] INFO : Request for http://www.ip3366.net/?stype=1&page=1 returned <Response [200]>. Pause for 2.048460651743503 seconds
+2020-07-11 16:52:59 base_spider.py [line:39] INFO : Request for https://ip.jiangxianli.com/?page=1 returned <Response [200]>. Pause for 2.0600236689462603 seconds
+2020-07-11 16:52:59 base_spider.py [line:39] INFO : Request for http://www.kxdaili.com/dailiip/1/1.html returned <Response [200]>. Pause for 2.7209693320425377 seconds
+2020-07-11 16:53:00 base_spider.py [line:39] INFO : Request for https://www.7yip.cn/free/?action=china&page=1 returned <Response [200]>. Pause for 2.092409927758876 seconds
+2020-07-11 16:53:00 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 51.89.166.147:8080
+2020-07-11 16:53:02 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 35.227.181.72:3128
+2020-07-11 16:53:06 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 51.91.212.159:3128
+2020-07-11 16:53:10 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 3.34.156.68:3128
+2020-07-11 16:53:11 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 207.244.244.163:80
+2020-07-11 16:53:16 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 20.43.156.27:80
+2020-07-11 16:53:19 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 118.212.104.219:9999
+2020-07-11 16:53:27 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 108.61.86.174:8080
+2020-07-11 16:53:28 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 20.43.156.109:80
+2020-07-11 16:53:30 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 20.44.193.208:80
+2020-07-11 16:53:35 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 103.216.51.210:8191
+2020-07-11 16:53:36 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 191.233.142.45:8080
+2020-07-11 16:53:37 mongo_pool.py [line:26] WARNING : 在数据库 proxies_pool.proxies 已存在代理 : 191.233.142.45:80
+2020-07-11 16:53:42 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 103.21.150.184:3128
+2020-07-11 16:53:43 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 221.180.170.104:8080
+2020-07-11 16:53:52 base_spider.py [line:39] INFO : Request for https://ip.jiangxianli.com/?page=2 returned <Response [200]>. Pause for 1.5069207976375656 seconds
+2020-07-11 16:53:52 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 142.93.152.33:8080
+2020-07-11 16:54:00 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 116.196.85.150:3128
+2020-07-11 16:54:03 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 1.255.48.197:8080
+2020-07-11 16:54:08 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 51.141.8.187:80
+2020-07-11 16:54:31 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 112.245.17.202:8080
+2020-07-11 16:54:41 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 58.220.95.79:10000
+2020-07-11 16:54:42 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 52.179.231.206:80
+2020-07-11 16:54:45 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 89.28.53.42:8080
+2020-07-11 16:54:56 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 47.106.120.15:3128
+2020-07-11 16:55:07 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 58.220.95.30:10174
+2020-07-11 16:55:10 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 27.72.29.159:8080
+2020-07-11 16:55:12 base_spider.py [line:39] INFO : Request for https://ip.jiangxianli.com/?page=3 returned <Response [200]>. Pause for 2.3203813223056606 seconds
+2020-07-11 16:55:23 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 221.122.91.59:80
+2020-07-11 16:55:30 mongo_pool.py [line:26] WARNING : 在数据库 proxies_pool.proxies 已存在代理 : 58.220.95.79:10000
+2020-07-11 16:55:30 mongo_pool.py [line:26] WARNING : 在数据库 proxies_pool.proxies 已存在代理 : 52.179.231.206:80
+2020-07-11 16:55:43 mongo_pool.py [line:26] WARNING : 在数据库 proxies_pool.proxies 已存在代理 : 47.106.120.15:3128
+2020-07-11 16:56:00 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 1.64.75.130:3128
+2020-07-11 16:56:03 base_spider.py [line:39] INFO : Request for http://www.ip3366.net/?stype=1&page=2 returned <Response [200]>. Pause for 1.1736639974428766 seconds
+2020-07-11 16:56:04 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 58.220.95.78:9401
+2020-07-11 16:56:07 base_spider.py [line:39] INFO : Request for https://www.7yip.cn/free/?action=china&page=2 returned <Response [200]>. Pause for 2.7188791371173577 seconds
+2020-07-11 16:56:08 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 119.49.69.236:80
+2020-07-11 16:56:09 base_spider.py [line:39] INFO : Request for http://www.kxdaili.com/dailiip/1/2.html returned <Response [200]>. Pause for 1.0337644079319612 seconds
+2020-07-11 16:56:25 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 58.220.95.54:9400
+2020-07-11 16:56:26 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 207.246.126.89:8080
+2020-07-11 16:56:31 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 45.32.77.16:8080
+2020-07-11 16:56:33 base_spider.py [line:39] INFO : Request for http://www.kxdaili.com/dailiip/1/3.html returned <Response [200]>. Pause for 2.895650948258836 seconds
+2020-07-11 16:56:42 base_spider.py [line:39] INFO : Request for https://ip.jiangxianli.com/?page=4 returned <Response [200]>. Pause for 1.8773936573655041 seconds
+2020-07-11 16:56:43 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 210.103.3.169:8080
+2020-07-11 16:56:54 base_spider.py [line:39] INFO : Request for http://www.kxdaili.com/dailiip/1/4.html returned <Response [200]>. Pause for 1.8303316821354714 seconds
+2020-07-11 16:56:59 mongo_pool.py [line:26] WARNING : 在数据库 proxies_pool.proxies 已存在代理 : 144.76.179.68:59991
+2020-07-11 16:57:02 base_spider.py [line:39] INFO : Request for http://www.kxdaili.com/dailiip/1/5.html returned <Response [200]>. Pause for 2.224682193982066 seconds
+2020-07-11 16:57:21 base_spider.py [line:39] INFO : Request for https://www.kuaidaili.com/free/inha/2/ returned <Response [200]>. Pause for 2.602742620482174 seconds
+2020-07-11 16:57:24 base_spider.py [line:39] INFO : Request for http://www.89ip.cn/index_2.html returned <Response [200]>. Pause for 1.9225598801350285 seconds
+2020-07-11 16:57:37 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 47.99.173.229:80
+2020-07-11 16:57:48 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 47.97.207.3:9090
+2020-07-11 16:57:56 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 163.125.67.21:9797
+2020-07-11 16:58:11 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 121.232.194.2:9000
+2020-07-11 16:58:12 base_spider.py [line:39] INFO : Request for https://ip.jiangxianli.com/?page=5 returned <Response [200]>. Pause for 2.4432114771957356 seconds
+2020-07-11 16:58:15 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 103.98.79.225:53284
+2020-07-11 16:58:17 base_spider.py [line:39] INFO : Request for http://www.kxdaili.com/dailiip/1/6.html returned <Response [200]>. Pause for 1.515962428622591 seconds
+2020-07-11 16:58:34 base_spider.py [line:39] INFO : Request for https://www.7yip.cn/free/?action=china&page=3 returned <Response [200]>. Pause for 2.237087358218619 seconds
+2020-07-11 16:58:40 base_spider.py [line:39] INFO : Request for http://www.ip3366.net/?stype=1&page=3 returned <Response [200]>. Pause for 2.9303312725360424 seconds
+2020-07-11 16:58:40 base_spider.py [line:39] INFO : Request for http://www.kxdaili.com/dailiip/1/7.html returned <Response [200]>. Pause for 1.0102668439421334 seconds
+2020-07-11 16:58:45 base_spider.py [line:39] INFO : Request for http://www.kxdaili.com/dailiip/1/8.html returned <Response [200]>. Pause for 2.135206421755371 seconds
+2020-07-11 16:58:55 base_spider.py [line:39] INFO : Request for https://ip.jiangxianli.com/?page=6 returned <Response [200]>. Pause for 2.3424640235876524 seconds
+2020-07-11 16:58:58 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 35.201.86.215:80
+2020-07-11 16:59:32 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 119.82.252.25:42914
+2020-07-11 16:59:49 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 195.208.250.22:3128
+2020-07-11 17:00:07 base_spider.py [line:39] INFO : Request for https://ip.jiangxianli.com/?page=7 returned <Response [200]>. Pause for 1.6861595399534977 seconds
+2020-07-11 17:00:51 base_spider.py [line:39] INFO : Request for http://www.kxdaili.com/dailiip/1/9.html returned <Response [200]>. Pause for 1.6244017439875567 seconds
+2020-07-11 17:00:59 base_spider.py [line:39] INFO : Request for https://www.kuaidaili.com/free/inha/3/ returned <Response [200]>. Pause for 1.2068190798367937 seconds
+2020-07-11 17:01:04 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 62.210.136.217:5836
+2020-07-11 17:01:08 base_spider.py [line:39] INFO : Request for https://www.7yip.cn/free/?action=china&page=4 returned <Response [200]>. Pause for 2.4386152586162724 seconds
+2020-07-11 17:01:12 base_spider.py [line:39] INFO : Request for https://ip.jiangxianli.com/?page=8 returned <Response [200]>. Pause for 1.1466802396882558 seconds
+2020-07-11 17:01:14 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 121.8.98.197:80
+2020-07-11 17:01:19 base_spider.py [line:39] INFO : Request for http://www.kxdaili.com/dailiip/2/1.html returned <Response [200]>. Pause for 1.18441868223246 seconds
+2020-07-11 17:01:22 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 45.77.201.184:3128
+2020-07-11 17:01:25 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 92.247.2.26:21231
+2020-07-11 17:01:31 base_spider.py [line:39] INFO : Request for http://www.ip3366.net/?stype=1&page=4 returned <Response [200]>. Pause for 1.9786485117958532 seconds
+2020-07-11 17:01:45 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 66.248.205.6:5836
+2020-07-11 17:01:46 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 117.141.114.57:8080
+2020-07-11 17:01:47 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 138.97.200.92:8080
+2020-07-11 17:01:51 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 103.240.168.138:6666
+2020-07-11 17:01:51 base_spider.py [line:39] INFO : Request for http://www.89ip.cn/index_3.html returned <Response [200]>. Pause for 2.3095757718430496 seconds
+2020-07-11 17:02:44 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 173.82.17.186:5836
+2020-07-11 17:03:01 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 212.83.139.79:5836
+2020-07-11 17:03:25 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 123.56.75.226:3128
+2020-07-11 17:03:34 base_spider.py [line:39] INFO : Request for https://ip.jiangxianli.com/?page=9 returned <Response [200]>. Pause for 1.8660723221360278 seconds
+2020-07-11 17:03:37 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 121.40.108.76:80
+2020-07-11 17:03:42 base_spider.py [line:39] INFO : Request for http://www.kxdaili.com/dailiip/2/2.html returned <Response [200]>. Pause for 2.8852704801553677 seconds
+2020-07-11 17:03:43 base_spider.py [line:39] INFO : Request for https://www.7yip.cn/free/?action=china&page=5 returned <Response [200]>. Pause for 1.3761542744825268 seconds
+2020-07-11 17:03:47 base_spider.py [line:39] INFO : Request for http://www.kxdaili.com/dailiip/2/3.html returned <Response [200]>. Pause for 2.860957413217318 seconds
+2020-07-11 17:03:53 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 119.52.0.242:80
+2020-07-11 17:03:54 base_spider.py [line:39] INFO : Request for http://www.kxdaili.com/dailiip/2/4.html returned <Response [200]>. Pause for 1.353870378303791 seconds
+2020-07-11 17:03:56 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 58.220.95.31:10174
+2020-07-11 17:04:02 base_spider.py [line:39] INFO : Request for http://www.kxdaili.com/dailiip/2/5.html returned <Response [200]>. Pause for 2.0489674754685083 seconds
+2020-07-11 17:04:15 mongo_pool.py [line:26] WARNING : 在数据库 proxies_pool.proxies 已存在代理 : 121.8.98.197:80
+2020-07-11 17:04:15 base_spider.py [line:39] INFO : Request for http://www.ip3366.net/?stype=1&page=5 returned <Response [200]>. Pause for 1.6947188578346566 seconds
+2020-07-11 17:04:46 base_spider.py [line:39] INFO : Request for http://www.kxdaili.com/dailiip/2/6.html returned <Response [200]>. Pause for 1.4594156594105823 seconds
+2020-07-11 17:04:50 base_spider.py [line:39] INFO : Request for http://www.kxdaili.com/dailiip/2/7.html returned <Response [200]>. Pause for 1.4524459563437975 seconds
+2020-07-11 17:05:05 base_spider.py [line:39] INFO : Request for https://www.kuaidaili.com/free/inha/4/ returned <Response [200]>. Pause for 1.3913695062432592 seconds
+2020-07-11 17:05:13 base_spider.py [line:39] INFO : Request for http://www.kxdaili.com/dailiip/2/8.html returned <Response [200]>. Pause for 1.3102142428113885 seconds
+2020-07-11 17:05:31 mongo_pool.py [line:26] WARNING : 在数据库 proxies_pool.proxies 已存在代理 : 45.77.201.184:3128
+2020-07-11 17:05:40 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 103.240.210.249:50838
+2020-07-11 17:05:49 base_spider.py [line:39] INFO : Request for https://ip.jiangxianli.com/?page=10 returned <Response [200]>. Pause for 1.804159382927381 seconds
+2020-07-11 17:06:14 base_spider.py [line:39] INFO : Request for https://www.7yip.cn/free/?action=china&page=6 returned <Response [200]>. Pause for 1.8245868263742882 seconds
+2020-07-11 17:06:16 base_spider.py [line:39] INFO : Request for http://www.kxdaili.com/dailiip/2/9.html returned <Response [200]>. Pause for 1.0806740671609485 seconds
+2020-07-11 17:06:17 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 103.141.189.194:8080
+2020-07-11 17:06:22 mongo_pool.py [line:26] WARNING : 在数据库 proxies_pool.proxies 已存在代理 : 163.125.67.21:9797
+2020-07-11 17:06:29 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 103.146.184.228:8181
+2020-07-11 17:06:41 base_spider.py [line:39] INFO : Request for http://www.89ip.cn/index_4.html returned <Response [200]>. Pause for 2.843715193262594 seconds
+2020-07-11 17:06:43 base_spider.py [line:39] INFO : Request for https://ip.jiangxianli.com/?page=11 returned <Response [200]>. Pause for 1.6221603356453416 seconds
+2020-07-11 17:06:50 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 101.37.118.54:8888
+2020-07-11 17:06:55 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 14.155.112.131:9000
+2020-07-11 17:06:56 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 95.179.170.148:8080
+2020-07-11 17:06:58 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 163.172.168.195:3128
+2020-07-11 17:06:59 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 51.158.186.136:3128
+2020-07-11 17:07:06 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 112.118.48.47:3128
+2020-07-11 17:07:09 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 128.199.149.7:8080
+2020-07-11 17:07:12 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 45.77.214.132:8080
+2020-07-11 17:07:13 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 13.85.25.59:8080
+2020-07-11 17:07:14 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 95.216.68.143:3128
+2020-07-11 17:07:16 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 196.27.119.131:80
+2020-07-11 17:07:17 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 104.129.196.153:10605
+2020-07-11 17:07:23 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 203.204.200.107:80
+2020-07-11 17:07:25 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 191.235.72.244:80
+2020-07-11 17:07:28 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 139.217.110.76:3128
+2020-07-11 17:07:32 base_spider.py [line:39] INFO : Request for https://ip.jiangxianli.com/?page=12 returned <Response [200]>. Pause for 1.6062440903010724 seconds
+2020-07-11 17:07:33 base_spider.py [line:39] INFO : Request for http://www.ip3366.net/?stype=1&page=6 returned <Response [200]>. Pause for 2.225842893325473 seconds
+2020-07-11 17:07:35 mongo_pool.py [line:26] WARNING : 在数据库 proxies_pool.proxies 已存在代理 : 139.217.110.76:3128
+2020-07-11 17:07:37 mongo_pool.py [line:26] WARNING : 在数据库 proxies_pool.proxies 已存在代理 : 108.61.86.174:8080
+2020-07-11 17:07:43 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 47.106.162.218:80
+2020-07-11 17:07:50 base_spider.py [line:39] INFO : Request for http://www.xiladaili.com/gaoni/2/ returned <Response [200]>. Pause for 1.9356560870303767 seconds
+2020-07-11 17:07:57 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 36.85.54.255:3128
+2020-07-11 17:08:04 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 155.138.157.26:8080
+2020-07-11 17:08:05 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 155.138.155.6:8080
+2020-07-11 17:08:08 mongo_pool.py [line:26] WARNING : 在数据库 proxies_pool.proxies 已存在代理 : 112.245.17.202:8080
+2020-07-11 17:08:11 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 153.142.70.170:8080
+2020-07-11 17:08:29 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 47.94.2.87:80
+2020-07-11 17:08:32 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 66.42.75.203:8080
+2020-07-11 17:08:33 mongo_pool.py [line:26] WARNING : 在数据库 proxies_pool.proxies 已存在代理 : 191.233.142.45:80
+2020-07-11 17:08:34 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 155.138.156.145:8080
+2020-07-11 17:08:41 base_spider.py [line:39] INFO : Request for https://ip.jiangxianli.com/?page=13 returned <Response [200]>. Pause for 2.8605014411275977 seconds
+2020-07-11 17:08:44 mongo_pool.py [line:26] WARNING : 在数据库 proxies_pool.proxies 已存在代理 : 191.233.142.45:8080
+2020-07-11 17:08:44 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 35.183.94.254:80
+2020-07-11 17:08:57 mongo_pool.py [line:26] WARNING : 在数据库 proxies_pool.proxies 已存在代理 : 47.106.120.15:3128
+2020-07-11 17:09:00 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 66.42.73.219:8080
+2020-07-11 17:09:04 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 139.180.212.249:8080
+2020-07-11 17:09:05 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 137.220.52.247:8080
+2020-07-11 17:09:06 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 138.197.120.248:3128
+2020-07-11 17:09:08 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 165.22.211.212:3128
+2020-07-11 17:09:10 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 200.150.202.114:80
+2020-07-11 17:09:11 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 45.76.67.56:8080
+2020-07-11 17:09:13 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 191.238.214.147:80
+2020-07-11 17:09:16 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 189.112.245.142:80
+2020-07-11 17:09:18 base_spider.py [line:39] INFO : Request for https://www.7yip.cn/free/?action=china&page=7 returned <Response [200]>. Pause for 2.9158343517029177 seconds
+2020-07-11 17:09:24 base_spider.py [line:39] INFO : Request for https://ip.jiangxianli.com/?page=14 returned <Response [200]>. Pause for 1.0366348648628096 seconds
+2020-07-11 17:09:24 mongo_pool.py [line:26] WARNING : 在数据库 proxies_pool.proxies 已存在代理 : 51.141.8.187:80
+2020-07-11 17:09:26 mongo_pool.py [line:26] WARNING : 在数据库 proxies_pool.proxies 已存在代理 : 45.32.77.16:8080
+2020-07-11 17:09:28 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 31.133.101.192:80
+2020-07-11 17:09:31 base_spider.py [line:39] INFO : Request for https://www.kuaidaili.com/free/inha/5/ returned <Response [200]>. Pause for 2.5623992496796726 seconds
+2020-07-11 17:09:55 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 191.232.170.39:8080
+2020-07-11 17:10:09 mongo_pool.py [line:26] WARNING : 在数据库 proxies_pool.proxies 已存在代理 : 103.21.150.184:3128
+2020-07-11 17:10:09 mongo_pool.py [line:26] WARNING : 在数据库 proxies_pool.proxies 已存在代理 : 51.91.212.159:3128
+2020-07-11 17:10:12 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 194.183.168.129:31385
+2020-07-11 17:10:30 base_spider.py [line:39] INFO : Request for http://www.89ip.cn/index_5.html returned <Response [200]>. Pause for 1.984874826749053 seconds
+2020-07-11 17:10:33 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 75.80.242.9:41007
+2020-07-11 17:10:40 base_spider.py [line:39] INFO : Request for https://ip.jiangxianli.com/?page=15 returned <Response [200]>. Pause for 2.3553816875055 seconds
+2020-07-11 17:12:05 base_spider.py [line:39] INFO : Request for https://www.7yip.cn/free/?action=china&page=8 returned <Response [200]>. Pause for 2.0651606833172043 seconds
+2020-07-11 17:13:13 mongo_pool.py [line:24] INFO : 向数据库 proxies_pool.proxies 插入新代理 : 103.149.238.34:8080
+2020-07-11 17:13:41 base_spider.py [line:39] INFO : Request for https://www.kuaidaili.com/free/inha/6/ returned <Response [200]>. Pause for 1.5803728862172781 seconds
+2020-07-11 17:14:01 _internal.py [line:113] INFO :  * Running on http://0.0.0.0:16888/ (Press CTRL+C to quit)
+2020-07-11 17:14:02 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 17:14:02] "[37mGET /proxies?protocol=http HTTP/1.1[0m" 200 -
+2020-07-11 17:14:13 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 17:14:13] "[37mGET /proxies?protocol=https HTTP/1.1[0m" 200 -
+2020-07-11 17:14:24 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 17:14:24] "[37mGET /proxies?protocol=https HTTP/1.1[0m" 200 -
+2020-07-11 17:14:44 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 17:14:44] "[37mGET /random?protocol=http HTTP/1.1[0m" 200 -
+2020-07-11 17:14:48 app.py [line:1891] ERROR : Exception on /random [GET]
+Traceback (most recent call last):
+  File "/Users/l/Documents/Projects/ip_pool/core/db/mongo_pool.py", line 91, in random_proxy
+    return random.choice(proxy_list)
+  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/random.py", line 290, in choice
+    raise IndexError('Cannot choose from an empty sequence') from None
+IndexError: Cannot choose from an empty sequence
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/l/Documents/Projects/ip_pool/env/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/l/Documents/Projects/ip_pool/env/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/l/Documents/Projects/ip_pool/env/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/l/Documents/Projects/ip_pool/env/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/l/Documents/Projects/ip_pool/env/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/l/Documents/Projects/ip_pool/env/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/l/Documents/Projects/ip_pool/core/proxy_api_flask.py", line 17, in random
+    proxy = self.mongo_pool.random_proxy(protocol, domain, count=self.count)
+  File "/Users/l/Documents/Projects/ip_pool/core/db/mongo_pool.py", line 93, in random_proxy
+    logger("当前没有满足要求的代理IP")
+TypeError: 'RootLogger' object is not callable
+2020-07-11 17:14:48 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 17:14:48] "[35m[1mGET /random?protocol=https HTTP/1.1[0m" 500 -
+2020-07-11 17:14:51 _internal.py [line:113] INFO : 127.0.0.1 - - [11/Jul/2020 17:14:51] "[37mGET /random?protocol=http HTTP/1.1[0m" 200 -

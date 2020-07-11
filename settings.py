@@ -20,7 +20,12 @@ MONGODB_COLLECTION_NAME = 'proxies'
 # 爬虫库
 PROXY_SPIDERS = [
     'core.proxy_spider.proxy_spiders.XiLaDaiLiSpider',
-    'core.proxy_spider.proxy_spiders.KuaiDaiLiSpider'
+    'core.proxy_spider.proxy_spiders.KuaiDaiLiSpider',
+    'core.proxy_spider.proxy_spiders.Vip7Spider',
+    'core.proxy_spider.proxy_spiders.IP89Spider',
+    'core.proxy_spider.proxy_spiders.IP3366Spider',
+    'core.proxy_spider.proxy_spiders.KxDaiLiSpider',
+    'core.proxy_spider.proxy_spiders.JiangXianLiSpider',
 ]
 
 # 运行爬虫的间隔时间(小时)
@@ -28,3 +33,6 @@ RUN_SPIDERS_INTERVAL = 12
 
 # 检测数据库中代理IP可用性的异步任务的开启数量
 PROXY_TEST_ASYNC_TASK_AMOUNT = 10
+
+# 测试数据库中代理IP可用性时间间隔(minutes)
+PROXY_TEST_INTERVAL = 60

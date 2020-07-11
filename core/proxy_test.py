@@ -2,10 +2,11 @@ from gevent import monkey
 monkey.patch_all()
 from gevent.pool import Pool
 from queue import Queue
+import schedule, time
 
 from core.db.mongo_pool import MongoPool
 from core.proxy_validate.httpbin_validator import check_proxy
-from settings import MAX_SCORE, PROXY_TEST_ASYNC_TASK_AMOUNT
+from settings import MAX_SCORE, PROXY_TEST_ASYNC_TASK_AMOUNT, PROXY_TEST_INTERVAL
 
 class ProxyTest(object):
 
@@ -57,6 +58,18 @@ class ProxyTest(object):
         # 让当前线程等待队列任务的完成
         self.queue.join()
 
+    @classmethod
+    def start(cls):
+        pt = cls()
+        pt.run()
+
+        schedule.every(PROXY_TEST_INTERVAL).minutes.do(pt.run)
+        while True:
+            # print("等待下次更新")
+            schedule.run_pending()
+            # time.sleep(PROXY_TEST_INTERVAL * 60 /2 + 1)
+            time.sleep(1)
+
 if __name__ == '__main__':
-    pt = ProxyTest()
-    pt.run()
+
+    ProxyTest.start()
