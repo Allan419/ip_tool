@@ -21,4 +21,6 @@ def get_request_headers():
     }
     return headers
 
-# if __name__ == '__main__':
+if __name__ == '__main__':
+    h = get_request_headers()
+    print(h)

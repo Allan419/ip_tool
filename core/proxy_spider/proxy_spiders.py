@@ -1,6 +1,6 @@
 import random
 
-from base_spider import BaseSpider
+from core.proxy_spider.base_spider import BaseSpider
 
 class KuaiDaiLiSpider(BaseSpider):
     """快代理Proxy IP爬虫   

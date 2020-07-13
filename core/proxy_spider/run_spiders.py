@@ -54,6 +54,7 @@ class RunSpider(object):
     def start(cls):
         r = RunSpider()
         r.run()
+        logger.info("*****************本次爬取完毕，等待下次爬取*****************")
         schedule.every(RUN_SPIDERS_INTERVAL).hours.do(r.run)
         while True:
             schedule.run_pending()

@@ -36,7 +36,7 @@ class BaseSpider(object):
         response = requests.get(url, headers=headers)
         pause = random.uniform(1, 3)
         time.sleep(pause)
-        logger.info(f"Request for {url} returned {response}. Pause for {pause} seconds")
+        logger.info(f"向 {url} 请求返回 {response.status_code} 随机等待{round(pause,1)}秒")
         return response.content
 
     def get_first_from_list(self, _list):

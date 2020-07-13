@@ -6,6 +6,7 @@ import schedule, time
 
 from core.db.mongo_pool import MongoPool
 from core.proxy_validate.httpbin_validator import check_proxy
+from utils.log import logger
 from settings import MAX_SCORE, PROXY_TEST_ASYNC_TASK_AMOUNT, PROXY_TEST_INTERVAL
 
 class ProxyTest(object):
@@ -62,7 +63,7 @@ class ProxyTest(object):
     def start(cls):
         pt = cls()
         pt.run()
-
+        logger.info('*****************本次检测完毕，等待下次检测*****************')
         schedule.every(PROXY_TEST_INTERVAL).minutes.do(pt.run)
         while True:
             # print("等待下次更新")

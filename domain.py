@@ -14,9 +14,12 @@ class Proxy(object):
         self.score = score
         self.disabled_domains = disabled_domains
 
-    def __str__(self):
-        return str(self.__dict__)
+    # def __str__(self):
+        # return str(self.__dict__)
 
     def url(self):
         return f"{self.ip}:{self.port}"
-        
+
+if __name__ == "__main__":
+    p = Proxy('88.88.88.88', '88')      
+    print(p.__dict__) 
