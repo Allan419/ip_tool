@@ -1,16 +1,19 @@
 # 想使用携程池，首先打猴子补丁
 from gevent import monkey
+
 monkey.patch_all()
 # 导入携程池
 from gevent.pool import Pool
 
-import importlib, schedule
+import importlib
+import schedule
 import time
 
 from settings import PROXY_SPIDERS, RUN_SPIDERS_INTERVAL
 from core.proxy_validate.httpbin_validator import check_proxy
 from core.db.mongo_pool import MongoPool
 from utils.log import logger
+
 
 class RunSpider(object):
 
@@ -19,6 +22,7 @@ class RunSpider(object):
         # 创建携程池对象
         self.coroutine_pool = Pool()
 
+    @staticmethod
     def get_spiders_from_settings(self):
         for spider_full_path in PROXY_SPIDERS:
             module_name, class_name = spider_full_path.rsplit('.', maxsplit=1)
@@ -45,7 +49,7 @@ class RunSpider(object):
     def run(self):
         spiders = self.get_spiders_from_settings()
         for spider in spiders:
-            self.coroutine_pool.apply_async(self.__execute_one_spider_task, args=(spider, ))
+            self.coroutine_pool.apply_async(self.__execute_one_spider_task, args=(spider,))
             # self.__execute_one_spider_task(spider)
         self.coroutine_pool.join()
 
@@ -58,8 +62,8 @@ class RunSpider(object):
         schedule.every(RUN_SPIDERS_INTERVAL).hours.do(r.run)
         while True:
             schedule.run_pending()
-            time.sleep(RUN_SPIDERS_INTERVAL*60*60/2+1)
+            time.sleep(RUN_SPIDERS_INTERVAL * 60 * 60 / 2 + 1)
+
 
 if __name__ == '__main__':
-    
     RunSpider.start()

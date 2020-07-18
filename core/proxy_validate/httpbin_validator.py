@@ -11,6 +11,7 @@ from domain import Proxy
 实现代理池Proxy的检验
 '''
 
+
 def check_proxy(proxy):
     """
     检查proxy的响应速度，匿名程度，支持的协议类型
@@ -20,7 +21,7 @@ def check_proxy(proxy):
     # print(f"正在检测 {proxy}")
     # 准备代理IP字典
     proxies = {
-        'http' : f'http://{proxy.ip}:{proxy.port}',
+        'http': f'http://{proxy.ip}:{proxy.port}',
         'https': f'https://{proxy.ip}:{proxy.port}'
     }
 
@@ -48,10 +49,10 @@ def check_proxy(proxy):
 
     return proxy
 
-def __check_http_proxies(proxies, is_http=True):
 
-    nick_type = -1 # 表征匿名程度,'高匿名':nick_type=0; '匿名':nick_type=1; '透明':nick_type=2 
-    speed = -1 # 表征相应速度
+def __check_http_proxies(proxies, is_http=True):
+    nick_type = -1  # 表征匿名程度,'高匿名':nick_type=0; '匿名':nick_type=1; '透明':nick_type=2
+    speed = -1  # 表征相应速度
     if is_http:
         test_url = 'http://httpbin.org/get'
     else:
@@ -62,21 +63,21 @@ def __check_http_proxies(proxies, is_http=True):
         # print(f"正在检测 ************************************* ")
         response = requests.get(test_url, headers=get_request_headers(), proxies=proxies, timeout=VALIDATE_TIMEOUT)
         if response.ok:
-            
+
             speed = round(time.time() - start, 2)
             content = json.loads(response.text)
             origin = content['origin']
             proxy_connection = content['headers'].get('Proxy-Connection', None)
-            
+
             if ',' in origin:
-                nick_type = 2 # 表示透明代理
+                nick_type = 2  # 表示透明代理
             elif proxy_connection:
-                nick_type = 1 # 表示匿名代理
+                nick_type = 1  # 表示匿名代理
             else:
-                nick_type = 0 # 表示高匿代理
+                nick_type = 0  # 表示高匿代理
 
             return True, nick_type, speed
-        
+
         else:
             return False, nick_type, speed
 
@@ -85,10 +86,10 @@ def __check_http_proxies(proxies, is_http=True):
         # print(e)
         return False, nick_type, speed
 
-# if __name__ == '__main__':
+if __name__ == '__main__':
 
-    # proxy = Proxy('150.138.106.80','80')
-    # a = check_proxy(proxy)
-    # proxy = Proxy('182.46.97.28','9999')
-    # a = check_proxy(proxy)
-    # print(a)
+    proxy = Proxy('150.138.106.80','80')
+    a = check_proxy(proxy)
+    proxy = Proxy('182.46.97.28','9999')
+    a = check_proxy(proxy)
+    print(a)

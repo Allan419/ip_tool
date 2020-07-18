@@ -1,9 +1,10 @@
-from pymongo import  MongoClient, ASCENDING, DESCENDING
+from pymongo import MongoClient, ASCENDING, DESCENDING
 import random
 
 from settings import MONGODB_URL, MONGODB_DB_NAME, MONGODB_COLLECTION_NAME
 from utils.log import logger
 from domain import Proxy
+
 
 class MongoPool(object):
 
@@ -16,7 +17,7 @@ class MongoPool(object):
 
     def insert_one(self, proxy):
         # 使用proxy.ip作为mongodb的主键: _id
-        count = self.proxies.count_documents({'_id':proxy.ip})
+        count = self.proxies.count_documents({'_id': proxy.ip})
         if count == 0:
             dic = proxy.__dict__
             dic['_id'] = proxy.ip
@@ -27,12 +28,12 @@ class MongoPool(object):
 
     def update_one(self, proxy):
         # 实现修改功能
-        self.proxies.update_one({'_id':proxy.ip}, {'$set':proxy.__dict__})
+        self.proxies.update_one({'_id': proxy.ip}, {'$set': proxy.__dict__})
         logger.info(f"在数据库 {self.proxies.full_name} 更新代理 : {proxy.url()}")
-    
+
     def delete_one(self, proxy):
         # 实现删除功能
-        self.proxies.delete_one({'_id':proxy.ip})
+        self.proxies.delete_one({'_id': proxy.ip})
         logger.info(f"在数据库 {self.proxies.full_name} 删除代理 : {proxy.url()}")
 
     def find_all(self):
@@ -42,7 +43,7 @@ class MongoPool(object):
             item.pop('_id')
             proxy = Proxy(**item)
             yield proxy
-    
+
     def find(self, conditions={}, count=0):
         """实现查询功能
         :param conditions: 查询条件字典
@@ -58,7 +59,7 @@ class MongoPool(object):
             item.pop('_id')
             proxy = Proxy(**item)
             proxy_list.append(proxy)
-        
+
         return proxy_list
 
     def get_proxies(self, protocol=None, domain=None, count=0, nick_type=0):
@@ -87,7 +88,7 @@ class MongoPool(object):
         """返回满足要求的一个随机代理IP
         """
         try:
-            proxy_list = self.get_proxies(protocol=protocal, domain=domain, count=count,nick_type=nick_type)
+            proxy_list = self.get_proxies(protocol=protocal, domain=domain, count=count, nick_type=nick_type)
             return random.choice(proxy_list)
         except Exception as e:
             logger("当前没有满足要求的代理IP")
@@ -101,8 +102,8 @@ class MongoPool(object):
         else:
             logger.info(f"此 {domain} 已在 {self.proxies.full_name}: {ip} 的 disabled_domains 字段 ")
 
-if __name__ == '__main__':
 
+if __name__ == '__main__':
     # proxy = Proxy('122.0.1.2','8900',protocol=2, speed=0.3, score = 50, disabled_domains=['jd.com', 'taobao.com'])
     # proxy = Proxy('4123.123.54.2','9000',protocol=1, speed=0.1, score = 49, disabled_domains=['jd.com'])
     # proxy = Proxy('112.5.2.6','8900',protocol=0, speed=0.5, score = 45, disabled_domains=['taobao.com'])

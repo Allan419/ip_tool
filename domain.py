@@ -1,7 +1,8 @@
 from settings import MAX_SCORE
 
+
 class Proxy(object):
-    def __init__(self, ip, port, protocol=-1, nick_type=-1, speed=-1, 
+    def __init__(self, ip, port, protocol=-1, nick_type=-1, speed=-1,
                  area=None, score=MAX_SCORE, disabled_domains=[]):
         self.ip = ip
         self.port = port
@@ -15,11 +16,12 @@ class Proxy(object):
         self.disabled_domains = disabled_domains
 
     # def __str__(self):
-        # return str(self.__dict__)
+    # return str(self.__dict__)
 
     def url(self):
         return f"{self.ip}:{self.port}"
 
+
 if __name__ == "__main__":
-    p = Proxy('88.88.88.88', '88')      
-    print(p.__dict__) 
+    p = Proxy('88.88.88.88', '88')
+    print(p.__dict__)

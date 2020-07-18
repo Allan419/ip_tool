@@ -4,6 +4,7 @@ import json
 from core.db.mongo_pool import MongoPool
 from utils.log import logger
 
+
 class ProxyAPI_Flask(object):
 
     def __init__(self, count):
@@ -51,16 +52,14 @@ class ProxyAPI_Flask(object):
             return f"{ip} 禁用域名 {domain} 成功"
 
     def run(self):
-        self.app.run('0.0.0.0',port=16888)
+        self.app.run('0.0.0.0', port=16888)
 
     @classmethod
     def start(cls):
         pf = cls(100)
         logger.info('*****************Flask启动在localhost:16888端口，监听中*****************')
         pf.run()
-        
+
 
 if __name__ == '__main__':
-    
     ProxyAPI_Flask.start()
-    

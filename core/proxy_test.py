@@ -1,4 +1,5 @@
 from gevent import monkey
+
 monkey.patch_all()
 from gevent.pool import Pool
 from queue import Queue
@@ -8,6 +9,7 @@ from core.db.mongo_pool import MongoPool
 from core.proxy_validate.httpbin_validator import check_proxy
 from utils.log import logger
 from settings import MAX_SCORE, PROXY_TEST_ASYNC_TASK_AMOUNT, PROXY_TEST_INTERVAL
+
 
 class ProxyTest(object):
 
@@ -71,6 +73,6 @@ class ProxyTest(object):
             # time.sleep(PROXY_TEST_INTERVAL * 60 /2 + 1)
             time.sleep(1)
 
-if __name__ == '__main__':
 
+if __name__ == '__main__':
     ProxyTest.start()

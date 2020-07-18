@@ -5,3 +5,4 @@ __*__
 *.log
 ip_tool.egg-info
 PyMongo.md
+.idea
