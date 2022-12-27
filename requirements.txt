@@ -4,4 +4,4 @@ lxml==4.5.2
 schedule==0.6.0
 gevent==20.6.2
 Flask==1.1.2
-setuptools==41.2.0
+setuptools==65.5.1
